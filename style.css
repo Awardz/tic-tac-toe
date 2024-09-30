@@ -1,0 +1,17 @@
+.board
+{
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 80vh;
+    width: auto;
+    gap: 2px;
+    background-color: red;
+    justify-content: center;
+    border: 6px solid black;
+    outline: 6px solid pink;
+}
+
+.square
+{
+    background-color: blue;
+}
