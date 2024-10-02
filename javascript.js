@@ -27,33 +27,35 @@ function GameController()
     playerToggle = () =>
         player1turn = !player1turn;
 
-    
-        
+    let num = 0;
 
     test.forEach((div) =>
+    {
+        div.addEventListener("click", () =>
         {
-            div.addEventListener("click", () =>
+            if(div.innerHTML === "")
             {
-
-                    if(player1turn === true)
-                    {
-                        div.style.background = "purple";
-                        div.innerHTML = player1.marker;
-                        console.log(div.id)
-                        playerToggle();
-                    }
-                    else
-                    {
-                        div.style.background = "green";
-                        div.innerHTML = player2.marker;
-                        playerToggle();
-                    }
-
-                
-            })
+                if(player1turn === true)
+                {
+                    div.style.background = "purple";
+                    div.innerHTML = player1.marker;
+                    num++
+                    playerToggle();
+                }
+                else
+                {
+                    div.style.background = "green";
+                    div.innerHTML = player2.marker;
+                    num++
+                    playerToggle();
+                }
+            }
+            if(num === 9)
+                console.log("Game Over")
         })
-        
+    })
 
+    
     const winConditions = 
     [
         [0, 1, 2],
